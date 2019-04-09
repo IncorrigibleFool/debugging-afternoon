@@ -17,28 +17,29 @@ class App extends Component {
     axios
       .get("https://practiceapi.devmountain.com/products/")
       .then(response => {
+        response.data[1].title = 'Mountains Baseball Cap'
         this.setState({
           products: response.data
         });
       });
   }
-  addToCart(item) {
+  addToCart = (item) => {
     this.setState({
       cart: [...this.state.cart, item]
     });
   }
-  removeFromCart(index) {
+  removeFromCart = (index) => {
     let cartCopy = this.state.cart.slice();
     cartCopy.splice(index, 1);
     this.setState({
       cart: cartCopy
     });
   }
-  navigate(location) {
+  navigate = (location) => {
     if (location === "cart") {
-      this.state.showCart = true;
+      this.setState({showCart: true})
     } else {
-      this.state.showCart = false;
+      this.setState({showCart: false})
     }
   }
   render() {
