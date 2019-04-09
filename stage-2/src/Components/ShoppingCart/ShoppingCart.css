@@ -9,6 +9,8 @@
 .shopping-cart-product-container {
   display: flex;
   margin: 5vh 0;
+  margin-left: 10vw;
+  margin-right: 10vw;
   font-family: 'Source Code Pro', monospace;
 }
 
